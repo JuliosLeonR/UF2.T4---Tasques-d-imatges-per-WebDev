@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Image Experiment</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+    <header class="bg-blue-500 text-white text-center p-5">
+        <h1 class="text-4xl">Gradient Image Experiment</h1>
+    </header>
+    <nav class="bg-gray-800 p-4">
+        <ul class="flex justify-center space-x-4">
+            <li><a href="index.html" class="text-white hover:text-gray-400">Template Inicial</a></li>
+            <li><a href="star_rain.html" class="text-white hover:text-gray-400">Star Rain</a></li>
+            <li><a href="gradient.html" class="text-white hover:text-gray-400">Gradient</a></li>
+            <li><a href="nature.html" class="text-white hover:text-gray-400">Nature (Paissatge)</a></li>
+            <li><a href="poster.html" class="text-white hover:text-gray-400">Poster</a></li>
+            <li><a href="cyberpunk.html" class="text-white hover:text-gray-400">Cyberpunk</a></li>
+            <li><a href="gif.html" class="text-white hover:text-gray-400">GIF</a></li>
+            <li><a href="avif.html" class="text-white hover:text-gray-400">Avif</a></li>
+            <li><a href="../../index.html" class="text-white hover:text-gray-400">Menú principal</a></li>
+        </ul>
+    </nav>
+    <main class="text-base text-center p-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+    <div>
+        <img src="images/fotografica1.jpeg" alt="Fotografica 1 JPG" class="w-full">
+        <div class="image-info"></div>
+    </div>
+    <div>
+        <img src="images/fotografica1.webp" alt="Fotografica 1 WEBP" class="w-full">
+        <div class="image-info"></div>
+    </div>
+    <div>
+        <img src="images/fotografica1.avif" alt="Fotografica 1 AVIF" class="w-full">
+        <div class="image-info"></div>
+    </div>
+    <div>
+        <img src="images/fotografica2.jpeg" alt="Fotografica 2 JPG" class="w-full">
+        <div class="image-info"></div>
+    </div>
+    <div>
+        <img src="images/fotografica2.webp" alt="Fotografica 2 WEBP" class="w-full">
+        <div class="image-info"></div>
+    </div>
+    <div>
+        <img src="images/fotografica2.avif" alt="Fotografica 2 AVIF" class="w-full">
+        <div class="image-info"></div>
+    </div>
+    <div>
+        <img src="images/fotografica3.jpg" alt="Fotografica 3 JPG" class="w-full">
+        <div class="image-info"></div>
+    </div>
+    <div>
+        <img src="images/fotografica3.webp" alt="Fotografica 3 WEBP" class="w-full">
+        <div class="image-info"></div>
+    </div>
+    <div>
+        <img src="images/fotografica3.avif" alt="Fotografica 3 AVIF" class="w-full">
+        <div class="image-info"></div>
+    </div>
+</main>
+
+<div class="bg-gray-100 p-5 rounded-lg shadow-md col-span-1 sm:col-span-2 md:col-span-4">
+    <p class="text-lg font-semibold mb-2">Comparació de Mides d'Imatges</p>
+    <table class="min-w-full bg-white">
+        <thead>
+            <tr>
+                <th class="py-2">Nom Imatge</th>
+                <th class="py-2">Mida Original (kB)</th>
+                <th class="py-2">JPG (Estalvi %)</th>
+                <th class="py-2">WebP (Estalvi %)</th>
+                <th class="py-2">AVIF (Estalvi %)</th>
+            </tr>
+        </thead>
+        <tbody id="image-comparison-table">
+            <!-- Rows will be added dynamically by JavaScript -->
+        </tbody>
+    </table>
+</div>
+    <script>
+        async function getImageSize(url) {
+            const response = await fetch(url);
+            const blob = await response.blob();
+            return blob.size / 1024; // Convert bytes to kB
+        }
+
+        function calculateSavings(originalSize, newSize) {
+            return ((originalSize - newSize) / originalSize * 100).toFixed(2);
+        }
+
+        populateTable();
+    </script>
+    <script>
+        async function populateTables() {
+            const imageGroups = [
+                { name: 'fotografica1', formats: ['jpeg', 'webp', 'avif'] },
+                { name: 'fotografica2', formats: ['jpeg', 'webp', 'avif'] },
+                { name: 'fotografica3', formats: ['jpg', 'webp', 'avif'] }
+            ];
+
+            for (const group of imageGroups) {
+                const originalSize = await getImageSize(`images/${group.name}.${group.formats[0]}`);
+                const sizes = await Promise.all(group.formats.map(format => getImageSize(`images/${group.name}.${format}`)));
+
+                const tableBody = document.getElementById('image-comparison-table');
+                const row = document.createElement('tr');
+
+                row.innerHTML = `
+                    <td class="border px-4 py-2">${group.name}</td>
+                    <td class="border px-4 py-2">${originalSize.toFixed(2)} kB</td>
+                    ${sizes.map((size, index) => `<td class="border px-4 py-2">${size.toFixed(2)} kB (${calculateSavings(originalSize, size)}%)</td>`).join('')}
+                `;
+
+                tableBody.appendChild(row);
+            }
+        }
+
+        populateTables();
+    </script>
+
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>

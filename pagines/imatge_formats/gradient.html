@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Image Experiment</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header class="bg-blue-500 text-white text-center p-5">
+        <h1 class="text-4xl">Gradient Image Experiment</h1>
+    </header>
+    <nav class="bg-gray-800 p-4">
+        <ul class="flex justify-center space-x-4">
+            <li><a href="index.html" class="text-white hover:text-gray-400">Template Inicial</a></li>
+            <li><a href="star_rain.html" class="text-white hover:text-gray-400">Star Rain</a></li>
+            <li><a href="gradient.html" class="text-white hover:text-gray-400">Gradient</a></li>
+            <li><a href="nature.html" class="text-white hover:text-gray-400">Nature (Paissatge)</a></li>
+            <li><a href="poster.html" class="text-white hover:text-gray-400">Poster</a></li>
+            <li><a href="cyberpunk.html" class="text-white hover:text-gray-400">Cyberpunk</a></li>
+            <li><a href="gif.html" class="text-white hover:text-gray-400">GIF</a></li>
+            <li><a href="avif.html" class="text-white hover:text-gray-400">Avif</a></li>
+            <li><a href="../../index.html" class="text-white hover:text-gray-400">Menú principal</a></li>
+        </ul>
+    </nav>
+    <main class="text-base text-center p-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
+        <div>
+            <img src="images/red_gradient_jpg.jpg" alt="Gradient JPG" class="w-full">
+            <div class="image-info"></div>
+        </div>
+        <div>
+            <img src="images/red_gradient_jpg-alta-compress.jpg" alt="Gradient Alta Compressió" class="w-full">
+            <div class="image-info"></div>
+        </div>
+        <div>
+            <img src="images/red_gradient_jpg-mitj-compress.jpg" alt="Gradient Mitjana Compressió" class="w-full">
+            <div class="image-info"></div>
+        </div>
+        <div>
+            <img src="images/red_gradient_gif.gif" alt="Gradient Gif" class="w-full">
+            <div class="image-info"></div>
+        </div>
+        <div>
+            <img src="images/red_gradient_png.png" alt="Gradient PNG" class="w-full">
+            <div class="image-info"></div>
+        </div>
+        <div>
+            <img src="images/red_gradient_webp.webp" alt="Gradient WebP" class="w-full">
+            <div class="image-info"></div>
+        </div>
+    </div>
+    <div class="bg-gray-100 p-5 rounded-lg shadow-md">
+        <p class="text-lg font-semibold mb-2">Quin format és el més òptim per aquest tipus d’imatge i per què?</p>
+        <p class="text-base mb-4">El format més òptim per a una fotografia d'un gradient és el PNG, ja que ofereix una compressió sense pèrdua de qualitat, mantenint els detalls i els colors de la imatge intactes.</p>
+        <p class="text-lg font-semibold mb-2">Es podria reduir encara més la mida?</p>
+        <p class="text-base mb-4">Sí, es podria reduir encara més la mida utilitzant altres formats com el JPEG, però això comportaria una pèrdua de qualitat.</p>
+        <p class="text-lg font-semibold mb-2">Perdria qualitat?</p>
+        <p class="text-base">Sí, utilitzar una compressió amb pèrdua com el JPEG faria que perdéssim qualitat, especialment en els detalls i els colors del gradient, com podem veure es veuria mes pixelat.</p>
+    </div>
+    <div class="bg-blue-100 p-5 rounded-lg shadow-md">
+        <p class="text-lg font-semibold mb-2">Què t’indica Lighthouse sobre el rendiment d’imatges de les teves pàgines?</p>
+        <p class="text-base mb-4">Indica l'estalvi potencial de les imatges que tenim, recomanacions de mides adequades i utilitzar formats de vídeo per incloure el contingut animat en comptes d'imatges (GIF).</p>
+        <p class="text-lg font-semibold mb-2">Quins són els principals problemes?</p>
+        <ul class="list-disc list-inside text-base mb-4">
+            <li>Publica imatges amb formats de pròxima generació. Estalvi potencial de 1251 KiB.</li>
+            <li>Els formats com WebP i AVIF solen comprimir millor les imatges que els formats PNG o JPEG, fent que es descarreguin més ràpid i consumeixin menys dades.</li>
+            <li>Utilitza formats de vídeo per incloure contingut animat.</li>
+            <li>Utilitza una mida adequada per a les imatges.</li>
+            <li>Els elements d'imatge no tenen width i height explícits.</li>
+        </ul>
+        <p class="text-lg font-semibold mb-2">Quines recomanacions ofereix?</p>
+        <ul class="list-disc list-inside text-base">
+            <li>Utilitzar formats com WebP i AVIF.</li>
+            <li>Els GIFs de gran mida no són eficients per mostrar contingut animat. Per utilitzar menys bytes de la xarxa, es recomana utilitzar els formats de vídeo MPEG4 o WebM per incloure animacions i els formats PNG o WebP per afegir imatges estàtiques en lloc del format GIF.</li>
+            <li>Mostra imatges amb una mida adequada per estalviar dades mòbils i millorar el temps de càrrega.</li>
+        </ul>
+        <p class="text-lg font-semibold mb-2">Simula una connexió lenta 3G i analitza la càrrega de les imatges. Què observes?</p>
+        <p>Ens mostra el nom de el element, el estat, el tipus d'element, el iniciador, el tamany i el temps en carregar.</p>
+    </div>
+
+    </main>
+    <script src="scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Rain Image Experiment</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+    <header class="bg-blue-500 text-white text-center p-5">
+        <h1 class="text-4xl">Star Rain Image Experiment</h1>
+    </header>
+    <nav class="bg-gray-800 p-4">
+        <ul class="flex justify-center space-x-4">
+            <li><a href="index.html" class="text-white hover:text-gray-400">Template Inicial</a></li>
+            <li><a href="star_rain.html" class="text-white hover:text-gray-400">Star Rain</a></li>
+            <li><a href="gradient.html" class="text-white hover:text-gray-400">Gradient</a></li>
+            <li><a href="nature.html" class="text-white hover:text-gray-400">Nature (Paissatge)</a></li>
+            <li><a href="poster.html" class="text-white hover:text-gray-400">Poster</a></li>
+            <li><a href="cyberpunk.html" class="text-white hover:text-gray-400">Cyberpunk</a></li>
+            <li><a href="gif.html" class="text-white hover:text-gray-400">GIF</a></li>
+            <li><a href="avif.html" class="text-white hover:text-gray-400">Avif</a></li>
+            <li><a href="../../index.html" class="text-white hover:text-gray-400">Menú principal</a></li>
+        </ul>
+    </nav>
+    <main class="text-base text-center p-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
+        <div>
+            <img src="images/star_rain_jpeg.jpg" alt="Star Rain JPG" class="w-full">
+            <div class="image-info"></div>
+        </div>
+        <div>
+            <img src="images/star_rain_jpeg-alta-comp.jpg" alt="Star Rain Alta Compressió" class="w-full">
+            <div class="image-info"></div>
+        </div>
+        <div>
+            <img src="images/star_rain-mitjana-comp.jpg" alt="Star Rain Mitjana Compressió" class="w-full">
+            <div class="image-info"></div>
+        </div>
+        <div>
+            <img src="images/star_rain_gif.gif" alt="Star Rain Gif" class="w-full">
+            <div class="image-info"></div>
+        </div>
+        <div>
+            <img src="images/star_rain_png.png" alt="Star Rain PNG" class="w-full">
+            <div class="image-info"></div>
+        </div>
+        <div>
+            <img src="images/star_rain_webp.webp" alt="Star Rain WEBP" class="w-full">
+            <div class="image-info"></div>
+        </div>
+        <div class="bg-gray-100 p-5 rounded-lg shadow-md">
+            <p class="text-lg font-semibold mb-2">Quin format és el més òptim per aquest tipus d’imatge i per què?</p>
+            <p class="text-base mb-4">El format més òptim per a una fotografia complexa com aquesta és el JPEG, ja que ofereix una bona compressió amb una pèrdua de qualitat acceptable, mantenint una mida de fitxer raonable.</p>
+
+
+            <p class="text-lg font-semibold mb-2">Perdria qualitat?</p>
+
+            <p class="text-base">Sí, utilitzar una compressió amb pèrdua com el JPEG faria que es perdessin detalls i qualitat, especialment en les àrees més complexes de la imatge, com el moviment de les estrelles.</p>
+        </div>
+        <div>
+            <div class="bg-gray-100 p-5 rounded-lg shadow-md">
+                <p class="text-lg font-semibold mb-2">Amb quin nivell de compressió no es perd qualitat visible?</p>
+                <p class="text-base mb-4">Amb una compressió JPEG de baixa a mitjana, la pèrdua de qualitat és mínima i sovint no visible a simple vista. Això permet mantenir una bona qualitat d'imatge amb una mida de fitxer reduïda.</p>
+
+                <p class="text-lg font-semibold mb-2">Podem reduir la mida encara més sense perdre qualitat?</p>
+                <p class="text-base mb-4">No, reduir la mida del fitxer més enllà d'un cert punt amb compressió JPEG sempre comportarà una pèrdua de qualitat visible. Per mantenir la qualitat, és millor utilitzar formats sense pèrdua com PNG, tot i que la mida del fitxer serà més gran.</p>
+
+                <p class="text-lg font-semibold mb-2">Què passaria si desem la imatge diverses vegades en format JPEG?</p>
+                <p class="text-base">Cada vegada que es desa una imatge en format JPEG, es produeix una compressió amb pèrdua, la qual cosa significa que es perd qualitat cada vegada. Això pot resultar en una degradació significativa de la imatge després de diverses desades.</p>
+            </div>
+        </div>
+        <div class="bg-blue-100 p-5 rounded-lg shadow-md">
+            <p class="text-lg font-semibold mb-2">Què t’indica Lighthouse sobre el rendiment d’imatges de les teves pàgines?</p>
+            <p class="text-base mb-4">Indica l'estalvi potencial de les imatges que tenim, recomanacions de mides adequades i utilitzar formats de vídeo per incloure el contingut animat en comptes d'imatges (GIF).</p>
+            <p class="text-lg font-semibold mb-2">Quins són els principals problemes?</p>
+            <ul class="list-disc list-inside text-base mb-4">
+                <li>Publica imatges amb formats de pròxima generació. Estalvi potencial de 1251 KiB.</li>
+                <li>Els formats com WebP i AVIF solen comprimir millor les imatges que els formats PNG o JPEG, fent que es descarreguin més ràpid i consumeixin menys dades.</li>
+                <li>Utilitza formats de vídeo per incloure contingut animat.</li>
+                <li>Utilitza una mida adequada per a les imatges.</li>
+                <li>Els elements d'imatge no tenen width i height explícits.</li>
+            </ul>
+            <p class="text-lg font-semibold mb-2">Quines recomanacions ofereix?</p>
+            <ul class="list-disc list-inside text-base">
+                <li>Utilitzar formats com WebP i AVIF.</li>
+                <li>Els GIFs de gran mida no són eficients per mostrar contingut animat. Per utilitzar menys bytes de la xarxa, es recomana utilitzar els formats de vídeo MPEG4 o WebM per incloure animacions i els formats PNG o WebP per afegir imatges estàtiques en lloc del format GIF.</li>
+                <li>Mostra imatges amb una mida adequada per estalviar dades mòbils i millorar el temps de càrrega.</li>
+            </ul>
+            <p class="text-lg font-semibold mb-2">Simula una connexió lenta 3G i analitza la càrrega de les imatges. Què observes?</p>
+            <p>Ens mostra el nom de el element, el estat, el tipus d'element, el iniciador, el tamany i el temps en carregar.</p>
+        </div>
+        <div class="bg-gray-100 p-5 rounded-lg shadow-md col-span-1 sm:col-span-2 md:col-span-4">
+            <p class="text-lg font-semibold mb-2">Comparació de Mides d'Imatges</p>
+            <table class="min-w-full bg-white">
+                <thead>
+                    <tr>
+                        <th class="py-2">Nom Imatge</th>
+                        <th class="py-2">Mida Original (kB)</th>
+                        <th class="py-2">JPG (Estalvi %)</th>
+                        <th class="py-2">WebP (Estalvi %)</th>
+                    </tr>
+                </thead>
+                <tbody id="image-comparison-table">
+                    <!-- Rows will be added dynamically by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+        <script>
+            async function getImageSize(url) {
+                const response = await fetch(url);
+                const blob = await response.blob();
+                return blob.size / 1024; // Convert bytes to kB
+            }
+
+            function calculateSavings(originalSize, newSize) {
+                return ((originalSize - newSize) / originalSize * 100).toFixed(2);
+            }
+
+            async function populateTable() {
+                const images = [
+                    { name: 'star_rain_jpeg.jpg', url: 'images/star_rain_jpeg.jpg' },
+                    { name: 'star_rain_webp.webp', url: 'images/star_rain_webp.webp' }
+                ];
+
+                const originalSize = await getImageSize(images[0].url);
+                const jpgSize = await getImageSize(images[0].url);
+                const webpSize = await getImageSize(images[1].url);
+
+                const tableBody = document.getElementById('image-comparison-table');
+                const row = document.createElement('tr');
+
+                row.innerHTML = `
+                    <td class="border px-4 py-2">${images[0].name}</td>
+                    <td class="border px-4 py-2">${originalSize.toFixed(2)} kB</td>
+                    <td class="border px-4 py-2">${jpgSize.toFixed(2)} kB (${calculateSavings(originalSize, jpgSize)}%)</td>
+                    <td class="border px-4 py-2">${webpSize.toFixed(2)} kB (${calculateSavings(originalSize, webpSize)}%)</td>
+                `;
+
+                tableBody.appendChild(row);
+            }
+
+            populateTable();
+        </script>
+    </main>
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>

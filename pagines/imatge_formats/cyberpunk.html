@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient Image Experiment</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header class="bg-blue-500 text-white text-center p-5">
+        <h1 class="text-4xl">Gradient Image Experiment</h1>
+    </header>
+    <nav class="bg-gray-800 p-4">
+        <ul class="flex justify-center space-x-4">
+            <li><a href="index.html" class="text-white hover:text-gray-400">Template Inicial</a></li>
+            <li><a href="star_rain.html" class="text-white hover:text-gray-400">Star Rain</a></li>
+            <li><a href="gradient.html" class="text-white hover:text-gray-400">Gradient</a></li>
+            <li><a href="nature.html" class="text-white hover:text-gray-400">Nature (Paissatge)</a></li>
+            <li><a href="poster.html" class="text-white hover:text-gray-400">Poster</a></li>
+            <li><a href="cyberpunk.html" class="text-white hover:text-gray-400">Cyberpunk</a></li>
+            <li><a href="gif.html" class="text-white hover:text-gray-400">GIF</a></li>
+            <li><a href="avif.html" class="text-white hover:text-gray-400">Avif</a></li>
+            <li><a href="../../index.html" class="text-white hover:text-gray-400">Menú principal</a></li>
+        </ul>
+    </nav>
+    <main class="text-base text-center p-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
+        <div>
+            <img src="images/cyberpunk_webp.webp" alt="Cyberpunk WEBP" class="w-full">
+            <div class="image-info"></div>
+        </div>
+        <div>
+            <img src="images/cyberpunk_jpg.jpg" alt="Cyberpunk JPG" class="w-full">
+            <div class="image-info"></div>
+        </div>
+        <div class="bg-gray-100 p-5 rounded-lg shadow-md col-span-1 sm:col-span-2 md:col-span-4">
+            <p class="text-lg font-semibold mb-2">Comparació de Mides d'Imatges</p>
+            <table class="min-w-full bg-white">
+                <thead>
+                    <tr>
+                        <th class="py-2">Nom Imatge</th>
+                        <th class="py-2">Mida Original (kB)</th>
+                        <th class="py-2">JPG (Estalvi %)</th>
+                        <th class="py-2">WebP (Estalvi %)</th>
+                    </tr>
+                </thead>
+                <tbody id="image-comparison-table">
+                </tbody>
+            </table>
+        </div>
+        <script>
+            async function getImageSize(url) {
+                const response = await fetch(url);
+                const blob = await response.blob();
+                return blob.size / 1024; // Convert bytes to kB
+            }
+    
+            function calculateSavings(originalSize, newSize) {
+                return ((originalSize - newSize) / originalSize * 100).toFixed(2);
+            }
+    
+            async function populateTable() {
+                const images = [
+                    { name: 'cyberpunk_jpg.jpg', url: 'images/cyberpunk_jpg.jpg' },
+                    { name: 'cyberpunk_webp.webp', url: 'images/cyberpunk_webp.webp' }
+                ];
+    
+                const originalSize = await getImageSize(images[0].url);
+                const jpgSize = await getImageSize(images[0].url);
+                const webpSize = await getImageSize(images[1].url);
+    
+                const tableBody = document.getElementById('image-comparison-table');
+                const row = document.createElement('tr');
+    
+                row.innerHTML = `
+                    <td class="border px-4 py-2">${images[0].name}</td>
+                    <td class="border px-4 py-2">${originalSize.toFixed(2)} kB</td>
+                    <td class="border px-4 py-2">${jpgSize.toFixed(2)} kB (${calculateSavings(originalSize, jpgSize)}%)</td>
+                    <td class="border px-4 py-2">${webpSize.toFixed(2)} kB (${calculateSavings(originalSize, webpSize)}%)</td>
+                `;
+    
+                tableBody.appendChild(row);
+            }
+    
+            populateTable();
+        </script>
+    </main>
+    <script src="scripts/main.js"></script>
+</body>
+</html>

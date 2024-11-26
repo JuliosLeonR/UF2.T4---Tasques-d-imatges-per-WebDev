@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pràctica 4</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <nav class="bg-gray-800 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-white text-lg font-semibold">Logo</a>
+            <div class="space-x-4">
+                <a href="practica1.html" class="text-gray-300 hover:text-white">Pràctica 1</a>
+                <a href="practica2.html" class="text-gray-300 hover:text-white">Pràctica 2</a>
+                <a href="practica3.html" class="text-gray-300 hover:text-white">Pràctica 3</a>
+                <a href="practica4.html" class="text-gray-300 hover:text-white">Pràctica 4</a>
+                <a href="practica5.html" class="text-gray-300 hover:text-white">Pràctica 5</a>
+                <a href="practica6.html" class="text-gray-300 hover:text-white">Pràctica 6</a>
+                <a href="practica7.html" class="text-gray-300 hover:text-white">Pràctica 7</a>
+            </div>
+        </div>
+    </nav>
+    <h1 class="text-3xl font-bold text-center my-8">Pràctica 4: Direcció d’art amb "picture"</h1>
+    <h2 class="text-lg text-center mt-4">
+        Quin avantatge té utilitzar picture per a direcció d’art en comparació amb srcset?
+    </h2>
+    <p class="text-lg text-center mt-4">
+        Utilitzar <code>&lt;picture&gt;</code> permet especificar diferents imatges per a diferents condicions, com ara la mida de la pantalla, la resolució, etc. Això proporciona un control més gran sobre quina imatge es mostra en funció del dispositiu o la mida de la finestra, en comparació amb <code>srcset</code>, que només permet especificar diferents resolucions de la mateixa imatge.
+    </p>
+    <picture>
+        <source srcset="./images/dispositiu_mobil.avif" media="(max-width: 600px)">
+        <source srcset="./images/high_definition.jpg" media="(min-width: 601px)">
+        <img src="./images/high_definition.jpg" alt="Example image">
+    </picture>
+ 
+</body>
+</html>

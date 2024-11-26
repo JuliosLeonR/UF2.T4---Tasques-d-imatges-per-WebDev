@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pràctica 6</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <nav class="bg-gray-800 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-white text-lg font-semibold">Logo</a>
+            <div class="space-x-4">
+                <a href="practica1.html" class="text-gray-300 hover:text-white">Pràctica 1</a>
+                <a href="practica2.html" class="text-gray-300 hover:text-white">Pràctica 2</a>
+                <a href="practica3.html" class="text-gray-300 hover:text-white">Pràctica 3</a>
+                <a href="practica4.html" class="text-gray-300 hover:text-white">Pràctica 4</a>
+                <a href="practica5.html" class="text-gray-300 hover:text-white">Pràctica 5</a>
+                <a href="practica6.html" class="text-gray-300 hover:text-white">Pràctica 6</a>
+                <a href="practica7.html" class="text-gray-300 hover:text-white">Pràctica 7</a>
+            </div>
+        </div>
+    </nav>
+    <h1 class="text-3xl font-bold text-center my-8">Pràctica 6: Mapa interactiu amb map</h1>
+    <img src="./images/map.jpg" usemap="#mapa">
+    <map name="mapa">
+        <area shape="rect" coords="34,44,270,350" href="#Area1" alt="Zona 1">
+        <area shape="circle" coords="377,300,75" href="#Area2" alt="Zona 2">
+        <area shape="poly" coords="500,60,550,90,520,120,480,100" href="#Area3" alt="Zona 3">
+    </map>
+</body>
+</html>

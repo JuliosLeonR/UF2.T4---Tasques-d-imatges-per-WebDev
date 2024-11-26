@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pràctica 3</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <nav class="bg-gray-800 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-white text-lg font-semibold">Logo</a>
+            <div class="space-x-4">
+                <a href="practica1.html" class="text-gray-300 hover:text-white">Pràctica 1</a>
+                <a href="practica2.html" class="text-gray-300 hover:text-white">Pràctica 2</a>
+                <a href="practica3.html" class="text-gray-300 hover:text-white">Pràctica 3</a>
+                <a href="practica4.html" class="text-gray-300 hover:text-white">Pràctica 4</a>
+                <a href="practica5.html" class="text-gray-300 hover:text-white">Pràctica 5</a>
+                <a href="practica6.html" class="text-gray-300 hover:text-white">Pràctica 6</a>
+                <a href="practica7.html" class="text-gray-300 hover:text-white">Pràctica 7</a>
+            </div>
+        </div>
+    </nav>
+    <h3 class="text-3xl font-bold text-center my-8">Pràctica 3: Imatges responsives amb srcset</h3>
+    <div class="flex justify-center my-4">
+        <button id="showCaptureBtn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Mostrar captura</button>
+    </div>
+    <img id="captureImage" src="images/captura1.png" alt="Captura" style="display: none;">
+    <script>
+        document.getElementById('showCaptureBtn').addEventListener('click', function() {
+            document.getElementById('captureImage').style.display = 'block';
+        });
+    </script>
+    <img srcset="images/xmas_avif2.avif 480w, images/xmas_avif2.avif 800w, images/xmas_avif2.avif 1200w"
+        sizes="(max-width: 600px) 480px, (max-width: 900px) 800px, 1200px"
+        src="images/xmas_avif2.avif"
+        alt="Christmas Image">
+</body>
+</html>
